@@ -1,0 +1,28 @@
+const mongoose = require("mongoose");
+const user = require("../User/user.js");
+
+
+
+
+/**
+ * Class that contains the business logic for the product repository interacting with the product model
+ */
+
+class UsersRepository {
+    async create(user) {
+        const createdusers = await user.create(user);
+        return createduser.toObject();
+    }
+
+    async findById(userId) {
+        const users = await user.findById(userId).lean();
+        return users;
+    }
+
+    async findAll() {
+        const users = await user.find().lean();
+        return users;
+    }
+}
+
+module.exports = UsersRepository;
